@@ -1,0 +1,32 @@
+.footer {
+	height: 200px;
+	background-color: #243640;
+    /* position: fixed; */
+    width: 95%;
+    max-width: 43rem;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 1rem;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    font-weight: normal;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.footer img {
+    padding-top: 25px;
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+}
+.footer p {
+	text-align: center;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	color: #a6b3ba;
+	text-transform: uppercase;
+}

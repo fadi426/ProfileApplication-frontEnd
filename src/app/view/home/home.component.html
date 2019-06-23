@@ -1,0 +1,30 @@
+
+<div class="wrapper">
+    <div class="sub-header">
+      <img src="assets/search.svg">
+      <p>Find trending info at your location</p>
+    </div>
+    <div class="sub-header-footer">
+      <div>
+        <label for="fname">location</label>
+      </div>
+        <input type="text" id="lname" name="location" placeholder="Your location...">
+    </div>
+  <ul class="auto-grid">
+    <li (click)="routeTo('weather')" id="weather">
+      <h1>Weather</h1>
+      </li>
+    <li (click)="routeTo('news')" id="news">
+      <h1>News</h1>
+      <p></p>
+    </li>
+    <li (click)="routeTo('events')" id="events">
+      <h1>Events</h1>
+      <p></p>
+    </li>
+    <li (click)="routeTo('movies')" id="movies">
+      <h1>Movies</h1>
+      <p></p>
+    </li>
+  </ul>
+</div>
