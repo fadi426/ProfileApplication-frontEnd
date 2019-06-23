@@ -1,0 +1,68 @@
+.sub {
+	padding-bottom: 0;
+	padding-top: 0;
+	width: 100%;
+}
+.sub li.sub-info {
+	display: block;
+	background-color: #fff;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	width: 100%;
+	position: relative;
+	left: 0;
+	margin-left: 0;
+	margin-bottom: 0;
+	float: none;
+	padding-top: 40px;
+}
+
+.sub li.sub-info ul {padding: 0 ;}
+.sub .text {height: auto;padding: 0 40px;}
+.sub .text h2 {
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 60px;
+}
+.sub .text p {
+	font-size: 20px;
+	line-height: 30px;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 60px;
+}
+.sub li:last-child .text p {
+	border-bottom: none;
+	padding-bottom: 120px;
+}
+
+.sub  .image.macbook,
+.sub  .image.iPad,
+.sub  .image.mini,
+.sub  .image.iPhone 
+{background-color: #fff;}
+
+.sub  .image.macbook {position: relative;}
+
+.sub  .image.macbook .device {
+	width: 64%;
+	margin-top: 30px;
+}
+.sub  .image {padding-bottom: 50%;}
+.sub  .image.iPad .device {width: 26%;}
+.sub  .image.mini .device {width: 18%;}
+.sub  .image.iPhone .device {
+	width: 10%;
+	margin-top: 15%;
+}
+.sub  .image.macbook {
+	margin-bottom: 3%;
+}
+.sub  .image.iPad {
+	margin-bottom: 3%;
+}
+.sub  .image.iPhone {
+	margin-top: -18%;
+	background-color: transparent;
+	margin-bottom: 11%;
+}

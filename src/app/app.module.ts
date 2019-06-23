@@ -20,7 +20,7 @@ import { FooterComponent } from './component/footer/footer.component';
     MoviesComponent,
     WeatherComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
