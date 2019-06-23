@@ -50,9 +50,10 @@ margin-top: 1rem;
 }
 
 .location-container {
-    background-color: #e6ecf0;
+    background-color: #ffffff;
     padding-bottom: 25px;
     padding-top: 15px;
+    height: 50px;
 }
 
 .sub-header-footer {
@@ -68,12 +69,11 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    background-color: #ffffff;
-
+    background-color: #e6ecf0;
     margin: auto;
     width: 100%;
     padding-right: 0px;
-  }
+}
 
 .sub-header p {
     display: flex;
@@ -168,3 +168,15 @@ li:before {
  :-ms-input-placeholder {  
     text-align: center; 
  }
+
+ /*the container must be positioned relative:*/
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+
+.autocomplete-items {
+    z-index: 2;
+    position: relative;
+}  
+

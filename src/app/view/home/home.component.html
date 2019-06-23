@@ -6,7 +6,11 @@
     </div>
     <div class="location-container">
       <div class="sub-header-footer">
-        <input (keyup)="onKey($event)" type="text" id="lname" name="location" placeholder="Your location...">
+        <form autocomplete="off" action="/action_page.php">
+          <div class="autocomplete">
+            <input id="myInput" type="text" name="myLocation" placeholder="Your location...">
+          </div>
+        </form>
       </div>
     </div>
   <ul class="auto-grid">

@@ -23,7 +23,7 @@
 ul {
     padding-inline-start: 0px;
 }
-.city {
+.day {
   font-size: 21px;
   font-weight: bold;
   text-transform: uppercase;
@@ -50,7 +50,6 @@ ul {
 }
 
 .sub {
-	padding-top: 20px;
 	margin-right: auto;
 	margin-left: auto;
 	padding-bottom: 20px;
@@ -73,6 +72,9 @@ ul {
 	width: 100%;
 	height: auto;
 	padding-bottom: 20px;
+	max-width: 15rem;
+	border-radius: 50%;
+	padding-top: 20px;
 }
 
 li.weather-now {
@@ -111,25 +113,24 @@ li.weather-day-after {
 
 .sub .text {
 	background-color: #ffffff;
-	padding: 20px;
+	padding: 10px;
 	font-size: 16px;
 	line-height: 23px;
 }
 .sub .text h2 {
 	text-align: center;
-	padding-bottom: 10px;
 	font: 22px OswaldBook;
 	letter-spacing: 1px;
 }
 .sub .text p {color: #6b7b83;}
 
-.sub .text.laptop h2 {color: #ccdd5d;}
-.sub .text.tablet h2 {color: #c97c98;}
-.sub .text.mini h2 {color: #88c4da;}
-.sub .text.mobile h2 {color: #fedd6d;}
+.sub .txt-weather-now h2 {color: #ccdd5d;}
+.sub .txt-weather-today h2 {color: #c97c98;}
+.sub .txt-weather-tomorrow h2 {color: #88c4da;}
+.sub .txt-weather-day-after h2 {color: #fedd6d;}
 
 @media only screen and (max-width: 1040px) {
-	.sub .text {height: 380px;}
+	.sub .text {height: 200px;}
 }
 
 	@media only screen and (max-width: 900px) {
@@ -146,14 +147,14 @@ li.weather-day-after {
 }
 
 @media only screen and (max-width: 780px) {
-	.sub .text {height: 290px;}
+	.sub .text {height: 200px;}
 }
 
 @media only screen and (max-width: 730px) {
-	.sub .text {height: 320px;}
+	.sub .text {height: 200px;}
 }
 @media only screen and (max-width: 700px) {
-	.sub .text {height: 360px;}
+	.sub .text {height: 200px;}
 }
 
 @media only screen and (max-width: 640px) {
@@ -190,6 +191,8 @@ li.weather-day-after {
 		line-height: 30px;
 		border-bottom: 1px solid #ddd;
 		padding-bottom: 60px;
+		display: grid;
+		justify-content: center;
 	}
 	.sub li:last-child .text p {
 		border-bottom: none;
@@ -209,4 +212,19 @@ li.weather-day-after {
 
 li {
 	list-style-type: none;
+}
+
+.section{
+	text-align: center;
+    margin-bottom: 20px;
+	padding: 25px 25px;
+	background-color: #ffffff;
+}
+
+.section h2 {
+    font-size: 24px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.7);
+    font-family: Oswald;
 }

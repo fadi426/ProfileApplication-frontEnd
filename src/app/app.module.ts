@@ -11,6 +11,8 @@ import { WeatherComponent } from './view/weather/weather.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 
+import { StoreModule } from './modules/store/store.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,7 @@ import { FooterComponent } from './component/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [StoreModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

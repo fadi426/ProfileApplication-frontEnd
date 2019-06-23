@@ -1,25 +1,33 @@
 <div class="weather-container">
   <li class="sub">
+    <div class="section">
+      <a href="https://www.buienradar.nl" target="_blank"><img class="live-weather-info" border="0" src="https://api.buienradar.nl/image/1.0/RadarMapNL?w=500&h=512"></a>
+      <h2>The weather in {{weatherInfo.Location}}</h2>
+      </div>
     <ul class="sub-container">
       <li class="sub-info">
         <ul>
           <li class="weather-now">   
             <div class="left-panel panel">
                 <div class="date">
-                    Monday, 20 Aug 2018
+                    Sunday, 24 June 2019
                 </div>
-                <div class="city">
-                    Mumbai
+                <div class="day">
+                  Nu
                 </div>
                 <div class="temp">
-                  27&deg;
+                  {{weatherInfo.Temperature}}&deg;
                   <img src="/assets/cloudy.svg" alt="" width="35">
                 </div>
             </div>
           </li>
-          <li class="text laptop">
-            <h2>Nu</h2>
-            <p>Hallo</p>
+          <li class="text txt-weather-now">
+            <p>Wind direction: {{weatherInfo.WindDirection}}</p>
+            <p>Wind force: {{weatherInfo.WindForce}}</p>
+            <p>Windspeed: {{weatherInfo.WindSpeedKmH}} km/h</p>
+            <p>Humidity: {{weatherInfo.Humidity}}%</p>
+            <p>Summary: {{weatherInfo.Summary}}</p>
+            <p></p>
           </li>
         </ul>
       </li>
@@ -28,20 +36,23 @@
           <li class="weather-today">
             <div class="left-panel panel">
                 <div class="date">
-                    Monday, 20 Aug 2018
+                    Sunday, 24 June 2019
                 </div>
-                <div class="city">
-                    Mumbai
+                <div class="day">
+                  Vandaag
                 </div>
                 <div class="temp">
-                  27&deg;
+                  {{calcAverageTemp(weatherInfo.MaxTempDay0,weatherInfo.MinTempDay0)}}&deg;
                   <img src="/assets/cloudy.svg" alt="" width="35">
                 </div>
             </div>
           </li>
-          <li class="text tablet">
-            <h2>Vandaag</h2>
-            <p>Hallo</p>          
+          <li class="text txt-weather-today">
+            <p>Wind direction: {{weatherInfo.WindDirectionDay0}}</p>
+            <p>Wind force: {{weatherInfo.WindForceDay0}}</p>
+            <p>Max temp: {{weatherInfo.MaxTempDay0}}</p>
+            <p>Min temp: {{weatherInfo.MinTempDay0}}</p>
+            <p>Kans op Neerslag: {{weatherInfo.PrecipitationProbDay0}}%</p> 
           </li>
         </ul>
       </li>
@@ -50,20 +61,23 @@
           <li class="weather-tomorrow">
             <div class="left-panel panel">
                 <div class="date">
-                    Monday, 20 Aug 2018
+                    Sunday, 24 June 2019
                 </div>
-                <div class="city">
-                    Mumbai
+                <div class="day">
+                  Morgen
                 </div>
                 <div class="temp">
-                  27&deg;
+                  {{calcAverageTemp(weatherInfo.MaxTempDay1,weatherInfo.MinTempDay1)}}&deg;
                   <img src="/assets/cloudy.svg" alt="" width="35">
                 </div>
             </div>
           </li>
-          <li class="text mini">
-            <h2>Morgen</h2>
-            <p>Hallo</p>
+          <li class="text txt-weather-tomorrow">
+            <p>Wind direction: {{weatherInfo.WindDirectionDay1}}</p>
+            <p>Wind force: {{weatherInfo.WindForceDay1}}</p>
+            <p>Max temp: {{weatherInfo.MaxTempDay1}}</p>
+            <p>Min temp: {{weatherInfo.MinTempDay1}}</p>
+            <p>Kans op Neerslag: {{weatherInfo.PrecipitationProbDay1}}%</p> 
           </li>
         </ul>
       </li>
@@ -72,24 +86,26 @@
           <li class="weather-day-after">
             <div class="left-panel panel">
                 <div class="date">
-                    Monday, 20 Aug 2018
+                    Sunday, 24 June 2019
                 </div>
-                <div class="city">
-                    Mumbai
+                <div class="day">
+                  Overmorgen
                 </div>
                 <div class="temp">
-                  27&deg;
+                  {{calcAverageTemp(weatherInfo.MaxTempDay2,weatherInfo.MinTempDay2)}}&deg;
                   <img src="/assets/cloudy.svg" alt="" width="35">
                 </div>
             </div>
           </li>
-          <li class="text mobile">
-            <h2>Overmorgen</h2>
-            <p>Hallo</p>
+          <li class="text txt-weather-day-after">
+            <p>Wind direction: {{weatherInfo.WindDirectionDay2}}</p>
+            <p>Wind force: {{weatherInfo.WindForceDay2}}</p>
+            <p>Max temp: {{weatherInfo.MaxTempDay2}}</p>
+            <p>Min temp: {{weatherInfo.MinTempDay2}}</p>
+            <p>Kans op Neerslag: {{weatherInfo.PrecipitationProbDay2}}%</p> 
           </li>
         </ul>
       </li>
     </ul>
-    <a href="https://www.buienradar.nl" target="_blank"><img class="live-weather-info" border="0" src="https://api.buienradar.nl/image/1.0/RadarMapNL?w=500&h=512"></a>
   </li>
 </div>
