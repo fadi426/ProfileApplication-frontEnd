@@ -1,68 +1,212 @@
+.weather-container {
+    max-width: 45rem;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 1rem;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: -webkit-box;
+    display: flex;
+    position: relative;
+}
+
+.sub-container {
+	padding-inline-start: -0px;
+}
+
+.date {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(0,0,0,0.5);
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+.city {
+  font-size: 21px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 5px;
+  color: rgba(0,0,0,0.7);
+}
+
+.temp {
+  font-size: 40px;
+  color: rgba(0,0,0,0.9);
+  font-weight: 100;
+  padding-top: 20px;
+}
+
+.panel {
+  display: inline-block;
+}
+
+.right-panel {
+  position: absolute;
+  float: right;
+  padding-top: 35px;
+  padding-left: 10px;
+}
+
 .sub {
-	padding-bottom: 0;
-	padding-top: 0;
-	width: 100%;
+	padding-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-bottom: 20px;
+	width: 103.3%;
+	clear: both;
 }
 .sub li.sub-info {
-	display: block;
-	background-color: #fff;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	width: 100%;
 	position: relative;
-	left: 0;
-	margin-left: 0;
-	margin-bottom: 0;
-	float: none;
-	padding-top: 40px;
+	width: 24%;
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+	height: 100%;
+	margin-bottom: 25px;
+	margin-right: 1%;
+	float: left;
 }
 
-.sub li.sub-info ul {padding: 0 ;}
-.sub .text {height: auto;padding: 0 40px;}
+.sub .live-weather-info {
+	width: 100%;
+	height: auto;
+	padding-bottom: 20px;
+}
+
+li.weather-now {
+	background-color: #ccdd5d;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 10px;
+}
+li.weather-today {
+	background-color: #c26c8b;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 10px;
+}
+li.weather-tomorrow {
+	background-color: #88c4da;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 10px;
+}
+li.weather-day-after {
+	background-color: #fedd6d;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 10px;
+}
+.sub .image {
+	position: relative;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+.sub  .image {
+	padding-bottom: 75%;
+}
+.sub  .image img {width: 100%;}
+
+.sub .text {
+	background-color: #ffffff;
+	padding: 20px;
+	font-size: 16px;
+	line-height: 23px;
+}
 .sub .text h2 {
-	font-size: 30px;
-	font-weight: bold;
-	line-height: 60px;
+	text-align: center;
+	padding-bottom: 10px;
+	font: 22px OswaldBook;
+	letter-spacing: 1px;
 }
-.sub .text p {
-	font-size: 20px;
-	line-height: 30px;
-	border-bottom: 1px solid #ddd;
-	padding-bottom: 60px;
-}
-.sub li:last-child .text p {
-	border-bottom: none;
-	padding-bottom: 120px;
+.sub .text p {color: #6b7b83;}
+
+.sub .text.laptop h2 {color: #ccdd5d;}
+.sub .text.tablet h2 {color: #c97c98;}
+.sub .text.mini h2 {color: #88c4da;}
+.sub .text.mobile h2 {color: #fedd6d;}
+
+@media only screen and (max-width: 1040px) {
+	.sub .text {height: 380px;}
 }
 
-.sub  .image.macbook,
-.sub  .image.iPad,
-.sub  .image.mini,
-.sub  .image.iPhone 
-{background-color: #fff;}
+	@media only screen and (max-width: 900px) {
+	.sub {
+		width: 107%;
+	}
+	.sub li.sub-info {
+		width: 45.3%;
+		margin-right: 3%;
+	}
+	.sub  .image {
+		padding-bottom: 61%;
+	}
+}
 
-.sub  .image.macbook {position: relative;}
+@media only screen and (max-width: 780px) {
+	.sub .text {height: 290px;}
+}
 
-.sub  .image.macbook .device {
-	width: 64%;
-	margin-top: 30px;
+@media only screen and (max-width: 730px) {
+	.sub .text {height: 320px;}
 }
-.sub  .image {padding-bottom: 50%;}
-.sub  .image.iPad .device {width: 26%;}
-.sub  .image.mini .device {width: 18%;}
-.sub  .image.iPhone .device {
-	width: 10%;
-	margin-top: 15%;
+@media only screen and (max-width: 700px) {
+	.sub .text {height: 360px;}
 }
-.sub  .image.macbook {
-	margin-bottom: 3%;
+
+@media only screen and (max-width: 640px) {
+
+	.sub {
+		padding-bottom: 0;
+		padding-top: 0;
+		width: 100%;
+	}
+	.sub li.sub-info {
+		display: block;
+		background-color: #fff;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		width: 100%;
+		position: relative;
+		left: 0;
+		margin-left: 0;
+		margin-bottom: 0;
+		float: none;
+		padding-top: 40px;
+	}
+
+	.sub li.sub-info ul {padding: 0 ;}
+	.sub .text {height: auto;padding: 0 40px;}
+	.sub .text h2 {
+		font-size: 30px;
+		font-weight: bold;
+		line-height: 60px;
+	}
+	.sub .text p {
+		font-size: 20px;
+		line-height: 30px;
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 60px;
+	}
+	.sub li:last-child .text p {
+		border-bottom: none;
+		padding-bottom: 120px;
+	}
+
+	.sub  .weather-now,
+	.sub  .weather-today,
+	.sub  .weather-tomorrow,
+	.sub  .weather-day-after 
+	{background-color: #fff;}
 }
-.sub  .image.iPad {
-	margin-bottom: 3%;
+
+@media only screen and (max-width: 400px) { 
+	.sub .text {height: auto;padding: 0 20px;}
 }
-.sub  .image.iPhone {
-	margin-top: -18%;
-	background-color: transparent;
-	margin-bottom: 11%;
+
+li {
+	list-style-type: none;
 }

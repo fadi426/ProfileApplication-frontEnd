@@ -4,11 +4,10 @@
       <img src="assets/search.svg">
       <p>Find trending info at your location</p>
     </div>
-    <div class="sub-header-footer">
-      <div>
-        <label for="fname">location</label>
+    <div class="location-container">
+      <div class="sub-header-footer">
+        <input (keyup)="onKey($event)" type="text" id="lname" name="location" placeholder="Your location...">
       </div>
-        <input type="text" id="lname" name="location" placeholder="Your location...">
     </div>
   <ul class="auto-grid">
     <li (click)="routeTo('weather')" id="weather">
