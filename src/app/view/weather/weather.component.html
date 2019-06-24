@@ -1,16 +1,18 @@
 <div class="weather-container">
   <li class="sub">
     <div class="section">
-      <a href="https://www.buienradar.nl" target="_blank"><img class="live-weather-info" border="0" src="https://api.buienradar.nl/image/1.0/RadarMapNL?w=500&h=512"></a>
+        <iframe [src]="weatherAnimationLink | safe" scrolling=no width=330 height=330 frameborder=no class="live-weather-info"
+          webkitallowfullscreen mozallowfullscreen allowfullscreen>
+      </iframe>
       <h2>The weather in {{weatherInfo.Location}}</h2>
-      </div>
+    </div>
     <ul class="sub-container">
       <li class="sub-info">
         <ul>
           <li class="weather-now">   
             <div class="left-panel panel">
                 <div class="date">
-                    Sunday, 24 June 2019
+                  {{days[0]}}
                 </div>
                 <div class="day">
                   Nu
@@ -36,7 +38,7 @@
           <li class="weather-today">
             <div class="left-panel panel">
                 <div class="date">
-                    Sunday, 24 June 2019
+                  {{days[0]}}
                 </div>
                 <div class="day">
                   Vandaag
@@ -61,7 +63,7 @@
           <li class="weather-tomorrow">
             <div class="left-panel panel">
                 <div class="date">
-                    Sunday, 24 June 2019
+                  {{days[1]}}
                 </div>
                 <div class="day">
                   Morgen
@@ -86,7 +88,7 @@
           <li class="weather-day-after">
             <div class="left-panel panel">
                 <div class="date">
-                    Sunday, 24 June 2019
+                  {{days[2]}}
                 </div>
                 <div class="day">
                   Overmorgen

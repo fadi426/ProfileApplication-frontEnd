@@ -12,6 +12,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 
 import { StoreModule } from './modules/store/store.module';
+import { SafePipeModule } from './modules/safe-pipe/safe-pipe.module'
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { StoreModule } from './modules/store/store.module';
     WeatherComponent,
     NavbarComponent,
     FooterComponent,
+    SafePipeModule
   ],
   imports: [
     BrowserModule,

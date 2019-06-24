@@ -70,11 +70,9 @@ ul {
 
 .sub .live-weather-info {
 	width: 100%;
-	height: auto;
-	padding-bottom: 20px;
-	max-width: 15rem;
+	max-width: 14rem;
+	max-height: 14rem;
 	border-radius: 50%;
-	padding-top: 20px;
 }
 
 li.weather-now {
@@ -177,6 +175,7 @@ li.weather-day-after {
 		margin-bottom: 0;
 		float: none;
 		padding-top: 40px;
+		border-bottom: 1px solid #ddd;
 	}
 
 	.sub li.sub-info ul {padding: 0 ;}
@@ -189,21 +188,23 @@ li.weather-day-after {
 	.sub .text p {
 		font-size: 20px;
 		line-height: 30px;
-		border-bottom: 1px solid #ddd;
-		padding-bottom: 60px;
 		display: grid;
 		justify-content: center;
 	}
-	.sub li:last-child .text p {
-		border-bottom: none;
-		padding-bottom: 120px;
+
+	.sub .live-weather-info {
+		max-width: 10rem;
+		max-height: 10rem;
 	}
 
 	.sub  .weather-now,
 	.sub  .weather-today,
 	.sub  .weather-tomorrow,
 	.sub  .weather-day-after 
-	{background-color: #fff;}
+	{    
+		border-radius: 4%;
+		margin: 20px;
+	}
 }
 
 @media only screen and (max-width: 400px) { 
