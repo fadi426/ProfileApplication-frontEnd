@@ -1,5 +1,5 @@
 <div class="weather-container">
-  <li class="sub">
+  <div class="sub">
     <div class="section">
         <iframe [src]="weatherAnimationLink | safe" scrolling=no width=330 height=330 frameborder=no class="live-weather-info"
           webkitallowfullscreen mozallowfullscreen allowfullscreen>
@@ -15,7 +15,7 @@
                   {{days[0]}}
                 </div>
                 <div class="day">
-                  Nu
+                  Now
                 </div>
                 <div class="temp">
                   {{weatherInfo.Temperature}}&deg;
@@ -41,7 +41,7 @@
                   {{days[0]}}
                 </div>
                 <div class="day">
-                  Vandaag
+                  Today
                 </div>
                 <div class="temp">
                   {{calcAverageTemp(weatherInfo.MaxTempDay0,weatherInfo.MinTempDay0)}}&deg;
@@ -66,7 +66,7 @@
                   {{days[1]}}
                 </div>
                 <div class="day">
-                  Morgen
+                  Tomorrow
                 </div>
                 <div class="temp">
                   {{calcAverageTemp(weatherInfo.MaxTempDay1,weatherInfo.MinTempDay1)}}&deg;
@@ -91,7 +91,7 @@
                   {{days[2]}}
                 </div>
                 <div class="day">
-                  Overmorgen
+                  Day a. tomorrow
                 </div>
                 <div class="temp">
                   {{calcAverageTemp(weatherInfo.MaxTempDay2,weatherInfo.MinTempDay2)}}&deg;
@@ -109,5 +109,5 @@
         </ul>
       </li>
     </ul>
-  </li>
+  </div>
 </div>

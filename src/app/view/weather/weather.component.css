@@ -56,6 +56,7 @@ ul {
 	width: 103.3%;
 	clear: both;
 }
+
 .sub li.sub-info {
 	position: relative;
 	width: 24%;
@@ -144,17 +145,6 @@ li.weather-day-after {
 	}
 }
 
-@media only screen and (max-width: 780px) {
-	.sub .text {height: 200px;}
-}
-
-@media only screen and (max-width: 730px) {
-	.sub .text {height: 200px;}
-}
-@media only screen and (max-width: 700px) {
-	.sub .text {height: 200px;}
-}
-
 @media only screen and (max-width: 640px) {
 
 	.sub {
@@ -202,7 +192,9 @@ li.weather-day-after {
 	.sub  .weather-tomorrow,
 	.sub  .weather-day-after 
 	{    
-		border-radius: 4%;
+		border-radius: 25px;
+		border: 2px solid #ffffff;
+		padding: 20px;
 		margin: 20px;
 	}
 }

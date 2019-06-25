@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
   async getLocations() {
     const resp = await fetch('https://localhost:5001/api/profile/locations/');
     const data = await resp.json();
-    console.log(data);
     data.forEach(location => {
       this.locations.push(location.name);
     });

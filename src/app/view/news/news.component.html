@@ -1,3 +1,13 @@
-<p>
-  news works!
-</p>
+<div class="news-container">
+  <div class="sub">
+    <div class="section">
+      <img src="/assets/newspapers.jpg" width=330 height=330 class="headerImg">
+      <h2>The news in {{store.location}}</h2>
+    </div>
+  </div>
+  <ul class="auto-grid">
+      <li *ngFor="let article of news" [ngStyle]="{'background-image':'url(' + article.UrlToImage + ')'}" class="gridCol">
+        <h1>Weather</h1>
+      </li>
+    </ul>
+</div>
