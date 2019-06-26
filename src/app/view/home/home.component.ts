@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 import httpClient from '../../infrastructure/http-client';
 import { ClassField } from '@angular/compiler';
 import { StoreModule } from '../../modules/store/store.module';
+import { Location } from '../../model/location';
+// import { Locaion } from '../../model/location';
 
 @Injectable()
 @Component({
@@ -19,8 +21,17 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, private store: StoreModule) {}
 
   routeTo(component){
-    this.store.location = (<HTMLInputElement>document.getElementById('myInput')).value;
-    this.router.navigate([component]);
+    let location = (<HTMLInputElement>document.getElementById('myInput')).value;
+    this.getLocationInfo(location).then(() => {
+      this.router.navigate([component]);
+    })
+  }
+
+  async getLocationInfo(locationName) {
+    const resp = await fetch('https://localhost:5001/api/profile/locations/' + locationName);
+    const data = await resp.json();
+    this.store.location = new Location(data.Name, data.Longitude, data.Latitude, data.Province, data.Country);
+    console.log(data.Country);
   }
 
   async getLocations() {
@@ -31,6 +42,7 @@ export class HomeComponent implements OnInit {
     });
     this.autocomplete(document.getElementById("myInput"), this.locations);
   }
+
   autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/

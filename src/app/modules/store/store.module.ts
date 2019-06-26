@@ -10,5 +10,5 @@ import { Injectable } from '@angular/core';
   declarations: []
 })
 export class StoreModule {
-  location = "";
+  location = null;
 }

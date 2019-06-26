@@ -15,7 +15,7 @@ export class WeatherComponent implements OnInit {
   days = [];
 
   async getWeatherInfo() {
-    const resp = await fetch('https://localhost:5001/api/profile/locations/' + this.store.location + "/weather");
+    const resp = await fetch('https://localhost:5001/api/profile/locations/' + this.store.location._name + "/weather");
     const data = await resp.json();
     this.weatherInfo = data;
   }
@@ -27,11 +27,8 @@ export class WeatherComponent implements OnInit {
     return String(average);
   }
 
-  async getGeoInfo() {
-    const resp = await fetch('https://localhost:5001/api/profile/locations/' + this.store.location);
-    const data = await resp.json();
-    this.weatherAnimationLink = "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + data.Latitude + "&lng=" + data.Longitude + "&overname=2&zoom=8&naam=leewarden&size=2&voor=1";
-    //this.weatherAnimationLink = "https://gadgets.buienradar.nl/gadget/zoommap/?lat=53.20139&lng=5.80859&overname=2&zoom=8&naam=leewarden&size=2b&voor=1";//console.log(this.weatherAnimationLink);
+  getGeoInfo() {
+    this.weatherAnimationLink = "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + this.store.location._latitude + "&lng=" + this.store.location._longitude + "&overname=2&zoom=8&naam=leewarden&size=2&voor=1";
   }
 
   getDays() {

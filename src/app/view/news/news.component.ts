@@ -13,19 +13,37 @@ export class NewsComponent implements OnInit {
 
   news = [];
 
-  async getNews() {
-    const resp = await fetch('https://localhost:5001/api/profile/locations/' + this.store.location + '/news/');
+  async getLocationNews(location, province) {
+    const resp = await fetch(location);
     const data = await resp.json();
     data.Articles.forEach(article => {
-      if(article.UrlToImage.length)
-      this.news.push(article);
+      if(article.UrlToImage && !this.containsArticle(article)){
+        if(province)
+          article.Location = this.store.location._province;
+        else
+          article.Location = this.store.location._name;
+        this.news.push(article);
+      }
     });
-    // foreach(article => {
+  }
 
-    // });
+  containsArticle(article) {
+    this.news.forEach((a) => {
+      if(a.title == article.title)
+        return true;
+      return false;
+    })
+  }
+
+  openArticleLink(url){
+    window.open(url, '_blank');
   }
 
   ngOnInit() {
-    this.getNews()
+    this.getLocationNews('https://localhost:5001/api/profile/locations/' + this.store.location._name + '%20' + this.store.location._country + '/news/', false).then(() => {
+      this.getLocationNews('https://localhost:5001/api/profile/locations/' + this.store.location._province + '/news/', true).then(() => {
+        this.getLocationNews('https://localhost:5001/api/profile/locations/' + this.store.location._province + '%20' + this.store.location._country + '/news/', true);
+      })
+    })
   }
 }
