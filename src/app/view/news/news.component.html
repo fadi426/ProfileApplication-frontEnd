@@ -7,7 +7,7 @@
   </div>
   <ul class="auto-grid">
       <li *ngFor="let article of news" class="grid-col" >
-        <img [src]= "article.UrlToImage" class="news-col grid-col" (click)="openArticleLink(article.Url)">
+        <img [src]= "article.UrlToImage" class="grid-col" (click)="openArticleLink(article.Url)">
         <div class="content">
           <header class="align-center">
             <p>{{article.Location}}</p>

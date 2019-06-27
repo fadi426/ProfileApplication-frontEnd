@@ -15,6 +15,7 @@ export class WeatherComponent implements OnInit {
   days = [];
 
   async getWeatherInfo() {
+    console.log(this.store.location._name);
     const resp = await fetch('https://localhost:5001/api/profile/locations/' + this.store.location._name + "/weather");
     const data = await resp.json();
     this.weatherInfo = data;

@@ -13,8 +13,8 @@ export class NewsComponent implements OnInit {
 
   news = [];
 
-  async getLocationNews(location, province) {
-    const resp = await fetch(location);
+  async getLocationNews(url, province) {
+    const resp = await fetch(url);
     const data = await resp.json();
     data.Articles.forEach(article => {
       if(article.UrlToImage && !this.containsArticle(article)){
@@ -31,8 +31,8 @@ export class NewsComponent implements OnInit {
     this.news.forEach((a) => {
       if(a.title == article.title)
         return true;
-      return false;
     })
+    return false;
   }
 
   openArticleLink(url){
