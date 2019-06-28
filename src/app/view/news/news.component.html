@@ -5,6 +5,10 @@
       <h2>The news in {{store.location._name}} and {{store.location._province}}</h2>
     </div>
   </div>
+  <div *ngIf="news.length == 0  && store.location" class="loader">
+      <img src="/assets/spinner.svg">
+      <p>Loading news</p>
+    </div>
   <ul class="auto-grid">
       <li *ngFor="let article of news" class="grid-col" >
         <img [src]= "article.UrlToImage" class="grid-col" (click)="openArticleLink(article.Url)">

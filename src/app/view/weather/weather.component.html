@@ -6,7 +6,11 @@
       </iframe>
       <h2>The weather in {{weatherInfo.Location}}</h2>
     </div>
-    <ul class="sub-container">
+    <div *ngIf="weatherInfo.length == 0  && store.location" class="loader">
+        <img src="/assets/spinner.svg">
+        <p>Loading weather information</p>
+      </div>
+    <ul *ngIf="weatherInfo.length != 0" class="sub-container">
       <li class="sub-info">
         <ul>
           <li class="weather-now">   

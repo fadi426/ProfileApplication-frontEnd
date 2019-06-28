@@ -2,8 +2,12 @@
   <div class="sub">
     <div class="section">
       <img src="/assets/event.jpg" width=330 height=330 class="headerImg">
-      <h2>Events in {{store.location._name}} and {{store.location._province}}</h2>
+      <h2>Events in {{store.location._name}}</h2>
     </div>
+  </div>
+  <div *ngIf="events.length == 0  && store.location" class="loader">
+    <img src="/assets/spinner.svg">
+    <p>Loading events</p>
   </div>
   <ul class="auto-grid">
     <li *ngFor="let event of events" class="grid-col" >

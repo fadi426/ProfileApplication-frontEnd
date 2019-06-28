@@ -1,13 +1,7 @@
 .weather-container {
     max-width: 45rem;
-    position: relative;
     margin: 0 auto;
-    padding: 0 1rem;
-    -webkit-box-pack: center;
-    justify-content: center;
-    display: -webkit-box;
-    display: flex;
-    position: relative;
+    display: flow-root;
 }
 
 .sub-container {
@@ -53,7 +47,6 @@ ul {
 	margin-right: auto;
 	margin-left: auto;
 	padding-bottom: 20px;
-	width: 103.3%;
 	clear: both;
 }
 
@@ -133,9 +126,6 @@ li.weather-day-after {
 }
 
 	@media only screen and (max-width: 900px) {
-	.sub {
-		width: 107%;
-	}
 	.sub li.sub-info {
 		width: 45.3%;
 		margin-right: 3%;
@@ -218,6 +208,22 @@ li {
     font-size: 24px;
     font-weight: normal;
     text-transform: uppercase;
+    color: rgba(0,0,0,0.7);
+    font-family: Oswald;
+}
+
+.loader {
+    display: grid;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.loader p {
+    text-align: center;
+    margin: 0;
+
+    font-size: 21px;
+    font-weight: normal;
     color: rgba(0,0,0,0.7);
     font-family: Oswald;
 }

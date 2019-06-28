@@ -8,12 +8,10 @@
   
   .nav {
     height: 50px;
-    width: 95%;
     max-width: 45rem;
     background-color: #fd7f7d;
     position: relative;
     margin: 0 auto;
-    padding: 0 1rem;
     justify-content: center;
     display: flex;
     position: relative;
@@ -72,7 +70,7 @@
       display: inline-block;
       width: 50px;
       height: 50px;
-      padding: 13px;
+      padding: 11px;
     }
     .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
       background-color: rgba(0, 0, 0, 0.3);
@@ -87,7 +85,7 @@
       position: absolute;
       display: block;
       width: 100%;
-      background-color: #333;
+      background-color: #3D4A55;
       height: 0px;
       transition: all 0.3s ease-in;
       overflow-y: hidden;

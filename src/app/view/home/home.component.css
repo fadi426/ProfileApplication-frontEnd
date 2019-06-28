@@ -30,7 +30,6 @@ margin-top: 1rem;
 .wrapper {
     max-width: 45rem;
     margin: 0 auto;
-    padding: 0 1rem;
 }
 
 .sub-header {
@@ -94,24 +93,10 @@ li {
     z-index: 1;
 }
 
-li:before {
-    background-image: inherit;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    content: '';
-    height: 100%;
-    left: 0px;
-    opacity: 0.01;
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    z-index: -1;
-    -webkit-transition: opacity 300ms;
-    transition: opacity 300ms;
-  }
-li:hover:before {
-opacity: 1;
+li:hover {
+    opacity: 0.5;
+    position: relative; 
+    top: -5px;
 }
 
 .weather {
