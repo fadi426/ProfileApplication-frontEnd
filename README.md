@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 A front-end that uses the the ProfileApplicationAPI to show nearby weather, news, events and movie information.
 
-Usage
+# Usage
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
