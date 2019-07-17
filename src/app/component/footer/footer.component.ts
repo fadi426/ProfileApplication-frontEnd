@@ -10,7 +10,7 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   redirectToGithub() {
-    window.location.replace('https://github.com/fadi426/ProfileApplication');
+    window.location.replace('https://github.com/fadi426/ProfileApplication-frontEnd');
   }
   ngOnInit() {
   }
