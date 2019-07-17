@@ -10,4 +10,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 Type your location in the input field located in the Home screen of the application and click on the component you want to see.
 
-Demo can be found here https://fadi426.github.io/ProfileApplication-frontEnd/weather
+Demo can be found here https://fadi426.github.io/ProfileApplication-frontEnd
