@@ -1,117 +1,140 @@
 <div class="weather-container">
-  <div class="sub">
-    <div class="section">
-        <iframe [src]="weatherAnimationLink | safe" scrolling=no width=330 height=330 frameborder=no class="live-weather-info"
-          webkitallowfullscreen mozallowfullscreen allowfullscreen>
-      </iframe>
-      <h2>The weather in {{weatherInfo.Location}}</h2>
-    </div>
-    <div *ngIf="weatherInfo.length == 0  && store.location" class="loader">
-        <img src="/assets/spinner.svg">
+  <div *ngIf="store.location == null || !store.location._name">
+    <h2>Please provide location in the home screen</h2>
+  </div>
+  <div *ngIf="store.location != null || store.location._name">
+    <div class="sub">
+      <div class="section">
+        <iframe
+          [src]="weatherAnimationLink | safe"
+          scrolling="no"
+          width="330"
+          height="330"
+          frameborder="no"
+          class="live-weather-info"
+          webkitallowfullscreen
+          mozallowfullscreen
+          allowfullscreen
+        >
+        </iframe>
+        <h2>The weather in {{ weatherInfo.Location }}</h2>
+      </div>
+      <div *ngIf="weatherInfo.length == 0 && store.location" class="loader">
+        <img src="./assets/spinner.svg" />
         <p>Loading weather information</p>
       </div>
-    <ul *ngIf="weatherInfo.length != 0" class="sub-container">
-      <li class="sub-info">
-        <ul>
-          <li class="weather-now">   
-            <div class="left-panel panel">
+      <ul *ngIf="weatherInfo.length != 0" class="sub-container">
+        <li class="sub-info">
+          <ul>
+            <li class="weather-now">
+              <div class="left-panel panel">
                 <div class="date">
-                  {{days[0]}}
+                  {{ days[0] }}
                 </div>
                 <div class="day">
                   Now
                 </div>
-                <div class="temp">
-                  {{weatherInfo.Temperature}}&deg;
-                  <img src="/assets/cloudy.svg" alt="" width="35">
-                </div>
-            </div>
-          </li>
-          <li class="text txt-weather-now">
-            <p>Wind direction: {{weatherInfo.WindDirection}}</p>
-            <p>Wind force: {{weatherInfo.WindForce}}</p>
-            <p>Windspeed: {{weatherInfo.WindSpeedKmH}} km/h</p>
-            <p>Humidity: {{weatherInfo.Humidity}}%</p>
-            <p>Summary: {{weatherInfo.Summary}}</p>
-            <p></p>
-          </li>
-        </ul>
-      </li>
-      <li class="sub-info">
-        <ul>
-          <li class="weather-today">
-            <div class="left-panel panel">
+                <div class="temp">{{ weatherInfo.Temperature }}&deg;</div>
+              </div>
+            </li>
+            <li class="text txt-weather-now">
+              <p>Wind direction: {{ weatherInfo.WindDirection }}</p>
+              <p>Wind force: {{ weatherInfo.WindForce }}</p>
+              <p>Windspeed: {{ weatherInfo.WindSpeedKmH }} km/h</p>
+              <p>Humidity: {{ weatherInfo.Humidity }}%</p>
+              <p>Summary: {{ weatherInfo.Summary }}</p>
+              <p></p>
+            </li>
+          </ul>
+        </li>
+        <li class="sub-info">
+          <ul>
+            <li class="weather-today">
+              <div class="left-panel panel">
                 <div class="date">
-                  {{days[0]}}
+                  {{ days[0] }}
                 </div>
                 <div class="day">
                   Today
                 </div>
                 <div class="temp">
-                  {{calcAverageTemp(weatherInfo.MaxTempDay0,weatherInfo.MinTempDay0)}}&deg;
-                  <img src="/assets/cloudy.svg" alt="" width="35">
+                  {{
+                    calcAverageTemp(
+                      weatherInfo.MaxTempDay0,
+                      weatherInfo.MinTempDay0
+                    )
+                  }}&deg;
                 </div>
-            </div>
-          </li>
-          <li class="text txt-weather-today">
-            <p>Wind direction: {{weatherInfo.WindDirectionDay0}}</p>
-            <p>Wind force: {{weatherInfo.WindForceDay0}}</p>
-            <p>Max temp: {{weatherInfo.MaxTempDay0}}</p>
-            <p>Min temp: {{weatherInfo.MinTempDay0}}</p>
-            <p>Kans op Neerslag: {{weatherInfo.PrecipitationProbDay0}}%</p> 
-          </li>
-        </ul>
-      </li>
-      <li class="sub-info">
-        <ul>
-          <li class="weather-tomorrow">
-            <div class="left-panel panel">
+              </div>
+            </li>
+            <li class="text txt-weather-today">
+              <p>Wind direction: {{ weatherInfo.WindDirectionDay0 }}</p>
+              <p>Wind force: {{ weatherInfo.WindForceDay0 }}</p>
+              <p>Max temp: {{ weatherInfo.MaxTempDay0 }}</p>
+              <p>Min temp: {{ weatherInfo.MinTempDay0 }}</p>
+              <p>Kans op Neerslag: {{ weatherInfo.PrecipitationProbDay0 }}%</p>
+            </li>
+          </ul>
+        </li>
+        <li class="sub-info">
+          <ul>
+            <li class="weather-tomorrow">
+              <div class="left-panel panel">
                 <div class="date">
-                  {{days[1]}}
+                  {{ days[1] }}
                 </div>
                 <div class="day">
                   Tomorrow
                 </div>
                 <div class="temp">
-                  {{calcAverageTemp(weatherInfo.MaxTempDay1,weatherInfo.MinTempDay1)}}&deg;
-                  <img src="/assets/cloudy.svg" alt="" width="35">
+                  {{
+                    calcAverageTemp(
+                      weatherInfo.MaxTempDay1,
+                      weatherInfo.MinTempDay1
+                    )
+                  }}&deg;
                 </div>
-            </div>
-          </li>
-          <li class="text txt-weather-tomorrow">
-            <p>Wind direction: {{weatherInfo.WindDirectionDay1}}</p>
-            <p>Wind force: {{weatherInfo.WindForceDay1}}</p>
-            <p>Max temp: {{weatherInfo.MaxTempDay1}}</p>
-            <p>Min temp: {{weatherInfo.MinTempDay1}}</p>
-            <p>Kans op Neerslag: {{weatherInfo.PrecipitationProbDay1}}%</p> 
-          </li>
-        </ul>
-      </li>
-      <li class="sub-info">
-        <ul>
-          <li class="weather-day-after">
-            <div class="left-panel panel">
+              </div>
+            </li>
+            <li class="text txt-weather-tomorrow">
+              <p>Wind direction: {{ weatherInfo.WindDirectionDay1 }}</p>
+              <p>Wind force: {{ weatherInfo.WindForceDay1 }}</p>
+              <p>Max temp: {{ weatherInfo.MaxTempDay1 }}</p>
+              <p>Min temp: {{ weatherInfo.MinTempDay1 }}</p>
+              <p>Kans op Neerslag: {{ weatherInfo.PrecipitationProbDay1 }}%</p>
+            </li>
+          </ul>
+        </li>
+        <li class="sub-info">
+          <ul>
+            <li class="weather-day-after">
+              <div class="left-panel panel">
                 <div class="date">
-                  {{days[2]}}
+                  {{ days[2] }}
                 </div>
                 <div class="day">
                   Day a. tomorrow
                 </div>
                 <div class="temp">
-                  {{calcAverageTemp(weatherInfo.MaxTempDay2,weatherInfo.MinTempDay2)}}&deg;
-                  <img src="/assets/cloudy.svg" alt="" width="35">
+                  {{
+                    calcAverageTemp(
+                      weatherInfo.MaxTempDay2,
+                      weatherInfo.MinTempDay2
+                    )
+                  }}&deg;
                 </div>
-            </div>
-          </li>
-          <li class="text txt-weather-day-after">
-            <p>Wind direction: {{weatherInfo.WindDirectionDay2}}</p>
-            <p>Wind force: {{weatherInfo.WindForceDay2}}</p>
-            <p>Max temp: {{weatherInfo.MaxTempDay2}}</p>
-            <p>Min temp: {{weatherInfo.MinTempDay2}}</p>
-            <p>Kans op Neerslag: {{weatherInfo.PrecipitationProbDay2}}%</p> 
-          </li>
-        </ul>
-      </li>
-    </ul>
+              </div>
+            </li>
+            <li class="text txt-weather-day-after">
+              <p>Wind direction: {{ weatherInfo.WindDirectionDay2 }}</p>
+              <p>Wind force: {{ weatherInfo.WindForceDay2 }}</p>
+              <p>Max temp: {{ weatherInfo.MaxTempDay2 }}</p>
+              <p>Min temp: {{ weatherInfo.MinTempDay2 }}</p>
+              <p>Kans op Neerslag: {{ weatherInfo.PrecipitationProbDay2 }}%</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

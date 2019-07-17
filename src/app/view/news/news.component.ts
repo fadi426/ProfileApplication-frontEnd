@@ -9,7 +9,7 @@ import { element } from 'protractor';
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit {
-  constructor(private store :StoreModule) {  }
+  constructor(public store :StoreModule) {  }
 
   news = [];
 
@@ -28,11 +28,12 @@ export class NewsComponent implements OnInit {
   }
 
   containsArticle(article) {
+    let contain = false;
     this.news.forEach((a) => {
-      if(a.title == article.title)
-        return true;
+      if(a.Title == article.Title)
+        contain =  true;
     })
-    return false;
+    return contain;
   }
 
   openArticleLink(url){
@@ -40,9 +41,9 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getLocationNews('https://localhost:5001/api/profile/locations/' + this.store.location._name + '%20' + this.store.location._country + '/news/', false).then(() => {
-      this.getLocationNews('https://localhost:5001/api/profile/locations/' + this.store.location._province + '/news/', true).then(() => {
-        this.getLocationNews('https://localhost:5001/api/profile/locations/' + this.store.location._province + '%20' + this.store.location._country + '/news/', true);
+    this.getLocationNews('https://profileapplicationapi.azurewebsites.net/api/profile/locations/' + this.store.location._name + '%20' + this.store.location._country + '/news/', false).then(() => {
+      this.getLocationNews('https://profileapplicationapi.azurewebsites.net/api/profile/locations/' + this.store.location._province + '/news/', true).then(() => {
+        this.getLocationNews('https://profileapplicationapi.azurewebsites.net/api/profile/locations/' + this.store.location._province + '%20' + this.store.location._country + '/news/', true);
       })
     })
   }

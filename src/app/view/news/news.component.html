@@ -1,23 +1,40 @@
 <div class="news-container">
-  <div class="sub">
-    <div class="section">
-      <img src="/assets/newspapers.jpg" width=330 height=330 class="headerImg">
-      <h2>The news in {{store.location._name}} and {{store.location._province}}</h2>
+    <div *ngIf="store.location == null || !store.location._name">
+      <h2>Please provide location in the home screen</h2>
     </div>
-  </div>
-  <div *ngIf="news.length == 0  && store.location" class="loader">
-      <img src="/assets/spinner.svg">
+    <div *ngIf="store.location != null || store.location._name">
+    <div class="sub">
+      <div class="section">
+        <img
+          src="./assets/newspapers.jpg"
+          width="330"
+          height="330"
+          class="headerImg"
+        />
+        <h2>
+          The news in {{ store.location._name }} and
+          {{ store.location._province }}
+        </h2>
+      </div>
+    </div>
+    <div *ngIf="news.length == 0 && store.location._name" class="loader">
+      <img src="./assets/spinner.svg" />
       <p>Loading news</p>
     </div>
-  <ul class="auto-grid">
-      <li *ngFor="let article of news" class="grid-col" >
-        <img [src]= "article.UrlToImage" class="grid-col" (click)="openArticleLink(article.Url)">
+    <ul class="auto-grid">
+      <li *ngFor="let article of news" class="grid-col">
+        <img
+          [src]="article.UrlToImage"
+          class="grid-col"
+          (click)="openArticleLink(article.Url)"
+        />
         <div class="content">
           <header class="align-center">
-            <p>{{article.Location}}</p>
-            <h2>{{article.Title}}</h2>
+            <p>{{ article.Location }}</p>
+            <h2>{{ article.Title }}</h2>
           </header>
         </div>
       </li>
     </ul>
+  </div>
 </div>

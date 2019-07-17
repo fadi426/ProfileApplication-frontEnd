@@ -6,7 +6,6 @@ import httpClient from '../../infrastructure/http-client';
 import { ClassField } from '@angular/compiler';
 import { StoreModule } from '../../modules/store/store.module';
 import { Location } from '../../model/location';
-// import { Locaion } from '../../model/location';
 
 @Injectable()
 @Component({
@@ -28,14 +27,15 @@ export class HomeComponent implements OnInit {
   }
 
   async getLocationInfo(locationName) {
-    const resp = await fetch('https://localhost:5001/api/profile/locations/' + locationName);
+    const resp = await fetch('https://profileapplicationapi.azurewebsites.net/api/profile/locations/' + locationName);
     const data = await resp.json();
+    if(locationName == "")
+      return;
     this.store.location = new Location(data.Name, data.Longitude, data.Latitude, data.Province, data.Country);
-    console.log(data.Country);
   }
 
   async getLocations() {
-    const resp = await fetch('https://localhost:5001/api/profile/locations/');
+    const resp = await fetch('https://profileapplicationapi.azurewebsites.net/api/profile/locations/');
     const data = await resp.json();
     data.forEach(location => {
       this.locations.push(location.name);

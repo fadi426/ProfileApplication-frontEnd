@@ -1,18 +1,20 @@
 
+<div class="header">
+  <div class="sub-header">
+  <img src="assets/search.svg">
+  <p>Find trending info at your location</p>
+</div>
+<div class="location-container">
+    <div class="sub-header-footer">
+      <form autocomplete="off" action="/action_page.php">
+        <div class="autocomplete">
+          <input id="myInput" type="text" name="myLocation" placeholder="Your location...">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 <div class="wrapper">
-    <div class="sub-header">
-      <img src="assets/search.svg">
-      <p>Find trending info at your location</p>
-    </div>
-    <div class="location-container">
-      <div class="sub-header-footer">
-        <form autocomplete="off" action="/action_page.php">
-          <div class="autocomplete">
-            <input id="myInput" type="text" name="myLocation" placeholder="Your location...">
-          </div>
-        </form>
-      </div>
-    </div>
   <ul class="auto-grid">
     <li (click)="routeTo('weather')" class="weather gridCol">
       <h1>Weather</h1>

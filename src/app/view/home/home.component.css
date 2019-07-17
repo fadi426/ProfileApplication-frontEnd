@@ -10,6 +10,11 @@ max-width: 400px;
 margin-top: 1rem;
 }
 
+.header {
+    max-width: 45rem;
+    margin: 0 auto;
+}
+
 @supports(display: grid) {
     .auto-grid {
         display: grid;
@@ -46,11 +51,13 @@ margin-top: 1rem;
     padding-bottom: 25px;
     padding-top: 15px;
     height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sub-header-footer {
     margin: auto;
-    width: 30%;
     padding-top: 10px;
 }
 
@@ -155,4 +162,20 @@ li:hover {
     z-index: 2;
     position: relative;
 }  
+
+@media only screen and (max-width: 600px) {
+    .header {
+        height: calc(100vh - 170px);
+    }
+    .wrapper {
+        margin-top: 150px;
+    }
+    .sub-header {
+        max-height: 1000px;
+    }
+    .sub-header img {
+        margin-top: 15%;
+    }
+  }
+  
 

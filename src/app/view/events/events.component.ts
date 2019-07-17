@@ -8,7 +8,7 @@ import { StoreModule } from '../../modules/store/store.module';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
-  constructor(private store: StoreModule) { }
+  constructor(public store: StoreModule) { }
 
   events = [];
 
@@ -25,7 +25,6 @@ export class EventsComponent implements OnInit {
         this.events.push(event);
       };
     });
-    console.log(this.events);
   }
 
   containsEvent(event){
@@ -41,8 +40,8 @@ export class EventsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getLocationEvents('https://localhost:5001/api/profile/locations/' + this.store.location._name + '/events/', false).then(() => {
-      this.getLocationEvents('https://localhost:5001/api/profile/locations/' + this.store.location._province + '/events/', true);
+    this.getLocationEvents('https://profileapplicationapi.azurewebsites.net/api/profile/locations/' + this.store.location._name + '/events/', false).then(() => {
+      this.getLocationEvents('https://profileapplicationapi.azurewebsites.net/api/profile/locations/' + this.store.location._province + '/events/', true);
     });
   }
 

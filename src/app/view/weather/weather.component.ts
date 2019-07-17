@@ -8,15 +8,14 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./weather.component.css'],
 })
 export class WeatherComponent implements OnInit {
-  constructor(private store: StoreModule, public sanitizer: DomSanitizer) {}
+  constructor(public store: StoreModule, public sanitizer: DomSanitizer) {}
   
   weatherInfo = "";
   weatherAnimationLink = "";
   days = [];
 
   async getWeatherInfo() {
-    console.log(this.store.location._name);
-    const resp = await fetch('https://localhost:5001/api/profile/locations/' + this.store.location._name + "/weather");
+    const resp = await fetch('https://profileapplicationapi.azurewebsites.net/api/profile/locations/' + this.store.location._name + "/weather");
     const data = await resp.json();
     this.weatherInfo = data;
   }

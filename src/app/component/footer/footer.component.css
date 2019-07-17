@@ -2,14 +2,12 @@
 	height: 200px;
 	background-color: #3D4A55;
     max-width: 43rem;
-    position: relative;
     margin: 0 auto;
     padding: 0 1rem;
     justify-content: center;
     display: flex;
     position: relative;
     font-weight: normal;
-	bottom: 0;
 	left: 0;
 	right: 0;
 }
